@@ -1,0 +1,20 @@
+sequenceDiagram
+
+    participant browser
+     participant code
+    participant server
+   
+
+    server->>browser: SEND JAVASCRIPT CODE
+    activate server
+    browser->>browser: EXECUTE JS CODE
+
+    code ->> browser: Obtiene las notas del servidor como datos JSON y agrega elementos HTML para mostrar las notas en la página usando la DOM-API.
+    activate browser
+
+    browser->>server: ENVIAR DATOS AL SERVIDOR CON EL FORMULARIO
+       activate server
+    
+    server->>browser: El servidor indica al navegador que vuelva a cargar la página Notas con un redireccionamiento.
+    activate browser
+
