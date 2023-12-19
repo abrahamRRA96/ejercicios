@@ -1,0 +1,25 @@
+sequenceDiagram
+
+    participant browser
+    participant server
+
+    browser->>server: SAVE
+    activate server
+    browser->>server: el navegador enviará la entrada del usuario al servidor.
+
+
+    browser->>server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+       activate server
+    server-->>browser: RELOAD PAGE
+    deactivate server
+
+    browser->>server: HTTP POST new_note
+    activate server
+    server-->>browser: SOLICITUDE POST
+    deactivate server
+
+    Note right of browser: El servidor crea un nuevo objeto de nota y lo agrega a un arreglo llamado notes
+
+
+
+    
