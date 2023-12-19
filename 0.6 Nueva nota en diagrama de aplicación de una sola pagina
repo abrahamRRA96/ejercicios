@@ -1,0 +1,17 @@
+sequenceDiagram
+        participant user
+    participant browser
+ 
+    participant server
+   
+    user->>browser: INTRODUCE DATOS EN FORMULARIO
+    activate browser
+
+
+    browser->>server: realiza solicitud POST a la dirección new_note_spa 
+    activate server
+    server->>server: La cabecera Content-Type de la solicitud le dice al servidor que los datos incluidos están representados en formato JSON.
+    activate server
+
+    server->>server: El servidor responde con el código de estado 201 Created.
+    activate server
